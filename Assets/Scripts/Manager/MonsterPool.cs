@@ -31,12 +31,12 @@ public class MonsterPool : MonoBehaviour {
         monsterPool = new Dictionary<string, List<GameObject>>();
 
 
-        LoadDataFromFile_Prefabs("Test_Monster");
+        LoadDataFromFile_Prefabs("Character_0001");
     }
 
     private void LoadDataFromFile_Prefabs(string path)
     {
-        GameObject prefab = Resources.Load("Prefabs/" + path) as GameObject;
+        GameObject prefab = Resources.Load("Prefabs/Unit/" + path) as GameObject;
 
 
         List<GameObject> objectList = new List<GameObject>();
@@ -51,22 +51,21 @@ public class MonsterPool : MonoBehaviour {
         monsterPool.Add(path, objectList);
     }
 
-    public GameObject WakeUpObject(string name)
+    public void WakeUpObject(string name)
     {
         List<GameObject> objList = monsterPool[name];
-        GameObject obj = objList[0];
 
+        /*
         if(obj == null)
         {
             // 에러 처리가 제대로 안되네
             Debug.Log("null");
-            return null;
+          
         }
+        */
 
-        obj.SetActive(true);
+        objList[0].SetActive(true);
 
         objList.RemoveAt(0);
-
-        return obj;
     }
 }

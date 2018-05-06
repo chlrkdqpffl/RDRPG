@@ -6,13 +6,13 @@ public class MoveWayPoint : MonoBehaviour {
 
     public bool Loop = true;
     public List<Vector2> waypoint;
-
+    
 
 
     // Private Variable
     private Character myCharacter;
     private int targetWayIndex;
-    
+    private Vector2 prevPos;
 
 	void Start () {
         Loop = true;
@@ -36,10 +36,24 @@ public class MoveWayPoint : MonoBehaviour {
             }
             else
             {
+                prevPos = transform.position;
+
                 float step = myCharacter.speed * Time.deltaTime;
                 transform.position = Vector2.MoveTowards(transform.position, waypoint[targetWayIndex], step);
-                //     transform.position = new Vector3(transform.position.x, transform.position.y, -1);
-                transform.position = new Vector3(transform.position.x, transform.position.y, -1 + transform.position.y / 1000.0f);
+
+
+                // Look Direction
+                Vector2 direction = ((Vector2)transform.position - prevPos).normalized;
+                
+                if (direction.x <= 0)
+                    transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+                else
+                    transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
+                
+
+                // Depth sort
+                transform.position = new Vector3(transform.position.x, transform.position.y, -10 - transform.position.y / 1000.0f);
+
             }
         }
 	}

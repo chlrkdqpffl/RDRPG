@@ -298,6 +298,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4249593108842736}
   - component: {fileID: 95306800483837402}
+  - component: {fileID: 114277491832352518}
+  - component: {fileID: 114798891300853222}
   m_Layer: 0
   m_Name: Character_0001
   m_TagString: Untagged
@@ -504,7 +506,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1839077492787502}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.03829038, y: -0.031949997, z: 0}
+  m_LocalPosition: {x: 0, y: 12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4042610193886964}
@@ -749,7 +751,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1882663717228432}
-  m_Mesh: {fileID: 43296672515949526, guid: f6b5e9b97bb50ce4eb498fb0686e03f6, type: 2}
+  m_Mesh: {fileID: 0}
 --- !u!95 &95306800483837402
 Animator:
   serializedVersion: 3
@@ -799,7 +801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.454846
+  m_Length: 0.45484555
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4260980919063960}
   m_AttachedIK: {fileID: 0}
@@ -837,7 +839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.26482585
+  m_Length: 0.26482537
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4815636508415600}
   m_AttachedIK: {fileID: 0}
@@ -853,10 +855,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.27835187
+  m_Length: 0.27835146
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4671615031635194}
   m_AttachedIK: {fileID: 0}
+--- !u!114 &114277491832352518
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1839077492787502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2174ae19e0f846f4aa6803c6991af754, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Loop: 1
+  waypoint:
+  - {x: 0, y: 12}
+  - {x: -24, y: 0}
+  - {x: 0, y: -12}
+  - {x: 24, y: 0}
 --- !u!114 &114324023847767862
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -869,7 +888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.25733665
+  m_Length: 0.25733688
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4018207278000930}
   m_AttachedIK: {fileID: 0}
@@ -990,6 +1009,20 @@ MonoBehaviour:
   m_Bones: []
   m_BoneTransforms:
   - {fileID: 4523906110600988}
+--- !u!114 &114798891300853222
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1839077492787502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76136a70c4ebec44f85c2e1c225a32b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nowDirecton: 0
+  nowAnimState: 0
+  speed: 5
 --- !u!114 &114835793591343638
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1024,7 +1057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.4526019
+  m_Length: 0.45260197
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4707993113068902}
   m_AttachedIK: {fileID: 0}
@@ -1056,7 +1089,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.31346732
+  m_Length: 0.31346765
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4007801394794172}
   m_AttachedIK: {fileID: 0}
@@ -1120,7 +1153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.5085899
+  m_Length: 0.50859016
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4352985527321264}
   m_AttachedIK: {fileID: 0}
@@ -1136,7 +1169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.34992453
+  m_Length: 0.3499247
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4814160436796046}
   m_AttachedIK: {fileID: 0}
@@ -1152,7 +1185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.38026208
+  m_Length: 0.3802622
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4227396250032834}
   m_AttachedIK: {fileID: 0}
@@ -1195,7 +1228,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 43011940588444262, guid: 9ea04901f3c8e6d4686dd8827af5f6ff, type: 2}
+  m_Mesh: {fileID: 0}
   m_Bones:
   - {fileID: 4892221147815888}
   - {fileID: 4814160436796046}
@@ -1245,7 +1278,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 43384074392124820, guid: 66e442f21711b4b45b0fa33d5b7b028d, type: 2}
+  m_Mesh: {fileID: 0}
   m_Bones:
   - {fileID: 4177245938288826}
   - {fileID: 4815636508415600}
@@ -1294,7 +1327,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 43301432148495072, guid: 47d5da4aef958ab4db60c1a213998738, type: 2}
+  m_Mesh: {fileID: 0}
   m_Bones:
   - {fileID: 4155694411821890}
   - {fileID: 4707993113068902}
@@ -1344,7 +1377,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 43415491527447408, guid: 48263f5f8c26f2c4892ce4c9791a546a, type: 2}
+  m_Mesh: {fileID: 0}
   m_Bones:
   - {fileID: 4458157738907178}
   - {fileID: 4352985527321264}
@@ -1394,7 +1427,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 43077123819484870, guid: 9b11e7a54fc0d4442b46227256f6dfa3, type: 2}
+  m_Mesh: {fileID: 0}
   m_Bones:
   - {fileID: 4217204422239070}
   - {fileID: 4007801394794172}
@@ -1444,7 +1477,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 43397485008763034, guid: fa0a2dd43138b1249b93352ae037d9bd, type: 2}
+  m_Mesh: {fileID: 0}
   m_Bones:
   - {fileID: 4523906110600988}
   m_BlendShapeWeights: []

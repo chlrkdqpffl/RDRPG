@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CWaveManager : MonoBehaviour {
 
+    public float startWatingTime;
+
     private int nowWave;
 
     private static CWaveManager _instance = null;
@@ -25,31 +27,34 @@ public class CWaveManager : MonoBehaviour {
         }
     }
 
-    void Start () {
-		
-	}
-	
-	void Update ()
+    public void Start()
     {
-		
-	}
+        StartWave(1);
+    }
 
     public void StartWave(int wave)
     {
         StageInfo stage = CDataFileManager.Instance.stageDic[wave];
+        nowWave = 1;
 
-        
-
-        MonsterPool.Instance.WakeUpObject(stage.WaveData[0].MonsterType);
-
+      //  for(int i = 0; i < stage.WaveData.Length; ++i)
+        StartCoroutine(CreateRepeat(stage.WaveData[0]));
     }
 
-    /*
+    
     private IEnumerator CreateRepeat(WaveInfo waveinfo)
     {
+        int createCount = 0;
 
+        yield return new WaitForSeconds(startWatingTime);
 
-        return new WaitForSeconds(waveinfo.RepeatTime);
+        while (createCount < waveinfo.AppearCount)
+        {
+            createCount++;
+            MonsterPool.Instance.WakeUpObject(waveinfo.MonsterType);
+
+            yield return new WaitForSeconds(waveinfo.RepeatTime);
+        }
     }
-    */
+    
 }
