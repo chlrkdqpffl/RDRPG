@@ -113,12 +113,12 @@ TextureImporter:
       name: Monster_0002_Body
       rect:
         serializedVersion: 2
-        x: 0
+        x: 4
         y: 0
-        width: 164
-        height: 188
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 297
+        height: 334
+      alignment: 9
+      pivot: {x: 0.5046532, y: 0.50598806}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -133,12 +133,12 @@ TextureImporter:
       name: Monster_0002_Eye1
       rect:
         serializedVersion: 2
-        x: 171
-        y: 132
-        width: 87
-        height: 35
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 318.66586
+        y: 244.30652
+        width: 130
+        height: 51
+      alignment: 9
+      pivot: {x: 0.4923077, y: 0.51960784}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -153,12 +153,12 @@ TextureImporter:
       name: Monster_0002_ArmL
       rect:
         serializedVersion: 2
-        x: 169
-        y: 61
-        width: 35
-        height: 65
+        x: 311.41174
+        y: 115.31835
+        width: 58
+        height: 106.00001
       alignment: 9
-      pivot: {x: 0.80838144, y: 0.8711555}
+      pivot: {x: 0.8292768, y: 0.8240328}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -173,12 +173,12 @@ TextureImporter:
       name: Monster_0002_ArmR
       rect:
         serializedVersion: 2
-        x: 223
-        y: 55
-        width: 36
-        height: 66
+        x: 400.73242
+        y: 101.84595
+        width: 62
+        height: 110
       alignment: 9
-      pivot: {x: 0.09680727, y: 0.8681324}
+      pivot: {x: 0.16273351, y: 0.7831981}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -193,12 +193,12 @@ TextureImporter:
       name: Monster_0002_LegL
       rect:
         serializedVersion: 2
-        x: 182
-        y: 20
-        width: 18
-        height: 33
+        x: 327.39514
+        y: 37.987705
+        width: 39
+        height: 60.999996
       alignment: 9
-      pivot: {x: 0.55259025, y: 0.8537899}
+      pivot: {x: 0.5850001, y: 0.83384854}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -213,12 +213,12 @@ TextureImporter:
       name: Monster_0002_LegR
       rect:
         serializedVersion: 2
-        x: 210
-        y: 20
-        width: 24
-        height: 33
+        x: 377.16724
+        y: 36.042004
+        width: 39
+        height: 60.000004
       alignment: 9
-      pivot: {x: 0.4737053, y: 0.8346662}
+      pivot: {x: 0.4418601, y: 0.78977025}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -238,6 +238,6 @@ TextureImporter:
     edges: []
     weights: []
   spritePackingTag: Monster_01
-  userData: 
+  userData: 636612086582413980
   assetBundleName: 
   assetBundleVariant: 
