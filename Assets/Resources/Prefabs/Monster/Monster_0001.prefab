@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4933828111389296}
   - component: {fileID: 114334147590043900}
-  - component: {fileID: 137057929266897946}
+  - component: {fileID: 137134304810866462}
   m_Layer: 0
   m_Name: Monster_0001_LegL
   m_TagString: Untagged
@@ -54,9 +54,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4999048041476894}
-  - component: {fileID: 95048166542629990}
   - component: {fileID: 114689493804007214}
   - component: {fileID: 114475166574485124}
+  - component: {fileID: 95467298246458212}
   m_Layer: 0
   m_Name: Monster_0001
   m_TagString: Untagged
@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4656549585606600}
   - component: {fileID: 114488766969973266}
-  - component: {fileID: 137085645519476452}
+  - component: {fileID: 137388987751348376}
   m_Layer: 0
   m_Name: Monster_0001_LegR
   m_TagString: Untagged
@@ -431,22 +431,22 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1533563240894568}
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 43535407303557040, guid: 8bfa8f95a4832aa46a3829861adabb34, type: 2}
 --- !u!33 &33292950262095130
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1828762797426250}
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 43619738060588954, guid: 4d2fcaeecab2f9d49824273f88354af7, type: 2}
 --- !u!33 &33978211294394474
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1088882993879692}
-  m_Mesh: {fileID: 0}
---- !u!95 &95048166542629990
+  m_Mesh: {fileID: 43782478769023938, guid: e05bf466381d0804ca989ba87f7e8635, type: 2}
+--- !u!95 &95467298246458212
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -636,9 +636,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76136a70c4ebec44f85c2e1c225a32b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myStatus:
+    Name: Monster_0001
+    HP: 20
+    AP: 0
+    DP: 0
+    Speed: 5
+    AttackSpeed: 0
   nowDirecton: 0
   nowAnimState: 0
-  speed: 10
+  myAnimator: {fileID: 0}
 --- !u!114 &114840544151715464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -658,7 +665,7 @@ MonoBehaviour:
   m_SortingOrder: 2
   m_Bones: []
   m_BoneTransforms: []
---- !u!137 &137057929266897946
+--- !u!137 &137134304810866462
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -697,7 +704,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 43756619227436790, guid: 16b0c5cbcfb8b404bb189f15c65cb5ec, type: 2}
   m_Bones:
   - {fileID: 4581279906427748}
   - {fileID: 4395662252499822}
@@ -707,7 +714,7 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.16744842, y: 0.034088735, z: 0}
     m_Extent: {x: 0.16640343, y: 0.1302109, z: 0}
   m_DirtyAABB: 0
---- !u!137 &137085645519476452
+--- !u!137 &137388987751348376
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -746,7 +753,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 43034976425704566, guid: 54dc3b73fd1f3b043be5c485525dddfc, type: 2}
   m_Bones:
   - {fileID: 4837121637914796}
   - {fileID: 4932976819048140}

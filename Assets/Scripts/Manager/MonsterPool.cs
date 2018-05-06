@@ -65,7 +65,7 @@ public class MonsterPool : MonoBehaviour {
         */
 
         objList[0].SetActive(true);
-
+        CCharacterManager.Instance.activeMonsterList.Add(objList[0]);
         objList.RemoveAt(0);
     }
 }

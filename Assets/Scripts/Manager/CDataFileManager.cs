@@ -33,8 +33,8 @@ public class CDataFileManager : MonoBehaviour {
 
         LoadDataFromFile_Stage("JsonFile/StageInfo");
 
-        LoadDataFromFile_Monster("JsonFile/MonsterInfo");
-        LoadDataFromFile_Unit("JsonFile/UnitInfo");
+ //       LoadDataFromFile_Monster("JsonFile/MonsterInfo");
+ //       LoadDataFromFile_Unit("JsonFile/UnitInfo");
     }
 
     private void LoadDataFromFile_Stage(string path)
@@ -54,6 +54,9 @@ public class CDataFileManager : MonoBehaviour {
         for (int i = 0; i < textDatas.Length; ++i)
         {
             CharacterInfo monster = JsonUtility.FromJson<CharacterInfo>(textDatas[i].text);
+
+
+
             monsterDic.Add(monster.Name, monster);
         }
     }

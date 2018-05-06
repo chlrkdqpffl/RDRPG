@@ -8,7 +8,6 @@ public class CUnitManager : MonoBehaviour {
 
     const int MaxGroundCount = 25;
 
-    public List<GameObject> activeList;
     private List<GameObject> unitPool;
     private List<int> overlapList;
 
@@ -34,7 +33,7 @@ public class CUnitManager : MonoBehaviour {
     private void Awake()
     {
         unitPool = new List<GameObject>();
-        activeList = new List<GameObject>();
+       
         overlapList = new List<int>();
 
         LoadUnit();   
@@ -73,11 +72,10 @@ public class CUnitManager : MonoBehaviour {
             Vector3 pos = FindTilePos(index);
             pos.z = -10 - transform.position.y / 1000.0f;
 
-
             GameObject obj = Instantiate(unitPool[Random.Range(0, unitPool.Count)], pos, Quaternion.identity, transform);
+            //            obj.GetComponent<Character>().myStatus = CDataFileManager.Instance.unitDic[obj.name];
 
-            activeList.Add(obj);
+            CCharacterManager.Instance.activeUnitList.Add(obj);
         }
     }
-
 }

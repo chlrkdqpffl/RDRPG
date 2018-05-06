@@ -4,21 +4,25 @@ using UnityEngine;
 
 public class Monster : Character {
 
-    public enum Type
-    {
-        None,
-        Monster1,
-        Monster2,
-        Monster3
-    }
-
 
 	void Start () {
 		
 	}
 	
-	// Update is called once per frame
-	void Update () {
+	
+	void Update ()
+    {
 		
 	}
+
+    public void Damage(int damage)
+    {
+        myStatus.HP -= damage;
+        if(myStatus.HP <= 0)
+        {
+            myStatus.HP = 0;
+        }
+
+        // 자기 자신이 있는 액티브 몬스터 풀에서 삭제해야함
+    }
 }

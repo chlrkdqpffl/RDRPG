@@ -4,7 +4,6 @@
 public struct CharacterInfo
 {
     public string Name;
-
     public int HP;
     public float AP;
     public float DP;

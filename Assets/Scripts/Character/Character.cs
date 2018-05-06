@@ -32,9 +32,10 @@ public class Character : MonoBehaviour {
     public Direction nowDirecton;
     public AnimState nowAnimState;
 
-    void Update () {
-		
-	}
+    public Animator myAnimator;
 
-
+    protected void Awake()
+    {
+        myAnimator = GetComponent<Animator>();
+    }
 }
