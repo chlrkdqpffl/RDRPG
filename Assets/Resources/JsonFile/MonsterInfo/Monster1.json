@@ -1,0 +1,8 @@
+{	
+	"Name":			Monster1,
+	"HP":			20,
+	"AP":			0,
+	"DP":			0,
+	"Speed":		5,
+	"AttackSpeed":		0
+}

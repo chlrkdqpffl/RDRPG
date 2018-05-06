@@ -18,4 +18,9 @@ public class GameButton : MonoBehaviour {
     {
         Time.timeScale = 2.0f;
     }
+
+    public void SummonButton()
+    {
+        CUnitManager.Instance.CreateRandomUnit();
+    }
 }

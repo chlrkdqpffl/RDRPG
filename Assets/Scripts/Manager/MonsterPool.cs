@@ -31,12 +31,12 @@ public class MonsterPool : MonoBehaviour {
         monsterPool = new Dictionary<string, List<GameObject>>();
 
 
-        LoadDataFromFile_Prefabs("Character_0001");
+        LoadDataFromFile_Monster("Monster_0001");
     }
 
-    private void LoadDataFromFile_Prefabs(string path)
+    private void LoadDataFromFile_Monster(string path)
     {
-        GameObject prefab = Resources.Load("Prefabs/Unit/" + path) as GameObject;
+        GameObject prefab = Resources.Load("Prefabs/Monster/" + path) as GameObject;
 
 
         List<GameObject> objectList = new List<GameObject>();

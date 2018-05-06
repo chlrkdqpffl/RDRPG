@@ -28,15 +28,9 @@ public class Character : MonoBehaviour {
         Right
     }
 
+    public CharacterInfo myStatus;
     public Direction nowDirecton;
     public AnimState nowAnimState;
-    public float speed;
-
-	void Start () {
-		
-	}
-
-
 
     void Update () {
 		

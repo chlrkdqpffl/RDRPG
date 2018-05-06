@@ -38,18 +38,23 @@ public class MoveWayPoint : MonoBehaviour {
             {
                 prevPos = transform.position;
 
-                float step = myCharacter.speed * Time.deltaTime;
+                float step = myCharacter.myStatus.Speed * Time.deltaTime;
                 transform.position = Vector2.MoveTowards(transform.position, waypoint[targetWayIndex], step);
 
 
                 // Look Direction
                 Vector2 direction = ((Vector2)transform.position - prevPos).normalized;
-                
+
                 if (direction.x <= 0)
-                    transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+                {
+                    if (transform.localScale.x < 0)
+                        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                }
                 else
-                    transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
-                
+                {
+                    if (transform.localScale.x > 0)
+                        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                }
 
                 // Depth sort
                 transform.position = new Vector3(transform.position.x, transform.position.y, -10 - transform.position.y / 1000.0f);
