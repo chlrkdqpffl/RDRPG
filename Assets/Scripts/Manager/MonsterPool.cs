@@ -34,14 +34,6 @@ public class MonsterPool : MonoBehaviour {
         LoadDataFromFile_Prefabs("Test_Monster");
     }
 
-    void Start () {
-		
-	}
-	
-	void Update () {
-		
-	}
-
     private void LoadDataFromFile_Prefabs(string path)
     {
         GameObject prefab = Resources.Load("Prefabs/" + path) as GameObject;
@@ -57,5 +49,24 @@ public class MonsterPool : MonoBehaviour {
         }
 
         monsterPool.Add(path, objectList);
+    }
+
+    public GameObject WakeUpObject(string name)
+    {
+        List<GameObject> objList = monsterPool[name];
+        GameObject obj = objList[0];
+
+        if(obj == null)
+        {
+            // 에러 처리가 제대로 안되네
+            Debug.Log("null");
+            return null;
+        }
+
+        obj.SetActive(true);
+
+        objList.RemoveAt(0);
+
+        return obj;
     }
 }

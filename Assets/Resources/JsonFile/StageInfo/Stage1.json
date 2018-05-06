@@ -1,5 +1,11 @@
 {	
 	"Stage":			1,
-	"Wave":				2
-
+	"Wave":				2,
+	
+	"WaveData":[
+	{
+		"AppearCount":	10,
+		"RepeatTime":	2,
+		"MonsterType":	"Test_Monster"
+	}]
 }

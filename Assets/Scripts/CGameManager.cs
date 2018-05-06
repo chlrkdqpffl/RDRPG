@@ -48,6 +48,12 @@ public class CGameManager : MonoBehaviour {
 	//	if(fpsText)
 	//		fpsText.text = (1.0f / Time.deltaTime).ToString("N0");
 
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            CWaveManager.Instance.StartWave(1);
+
+        }
+
 	}
 
     /*
