@@ -32,7 +32,7 @@ public class Unit : Character
 
             if (Vector2.Distance(transform.position, CCharacterManager.Instance.activeMonsterList[i].transform.position) <= AttackRange)
             {
-                myAnimator.SetBool("isRange", true);
+                myAnimator.SetBool("IsRange", true);
                 if (isAttackWating == false)
                 {
                     StartCoroutine(AttackEnemy(i));
@@ -40,7 +40,7 @@ public class Unit : Character
                 }
             }
             else
-                myAnimator.SetBool("isRange", false);
+                myAnimator.SetBool("IsRange", false);
         }
     }
 

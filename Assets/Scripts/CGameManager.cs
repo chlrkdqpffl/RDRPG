@@ -1,17 +1,21 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class CGameManager : MonoBehaviour {
 
-	public int nowStage = 1;
-    public int nowWave = 1;
-    
-	// ======= UI Variable ====== //
+    //	public int nowStage = 1;
 
+    public int startMana;
+    public float mana;
 
+    private float totalTime;
+    // ======= UI Variable ====== //
+    public Text timeText;
+    public Image summonImage;
+    public Text summonText;
+
+    public Image waveGage;
 	// ========================== //
     
 	private float gameTime;
@@ -33,38 +37,51 @@ public class CGameManager : MonoBehaviour {
 		}
 	}
 
-	void Awake()
-	{
-	
-	}
+    private void Start()
+    {
+        mana = startMana;
 
-	void Start()
-	{
+        StageInfo stage = CDataFileManager.Instance.stageDic[1];
 
-	}
+        for (int i = 0; i < stage.WaveData.Length; ++i)
+        {
+            totalTime += stage.WaveData[i].AppearCount * stage.WaveData[i].RepeatTime;
+        }
+    }
 
-	void Update()
+    void Update()
 	{
-	//	if(fpsText)
-	//		fpsText.text = (1.0f / Time.deltaTime).ToString("N0");
+        //	if(fpsText)
+        //		fpsText.text = (1.0f / Time.deltaTime).ToString("N0");
+
+        UpdateGameTime();
+        UpdateMana();
+        UpdateWaveGage();
+    }
+
+    private void UpdateMana()
+    {
+        if (mana < 200)
+        {
+            mana += Time.deltaTime * 10;
+        }
+        else mana = 200;
+
+        summonImage.fillAmount = mana / 100;
+        summonText.text = ((int)mana / 100).ToString() + "/2";
+    }
+
+    private void UpdateGameTime()
+	{
+        gameTime += Time.deltaTime;
+        timeText.text = gameTime.ToString("N2");
+
+    }
     
-	}
-
-    /*
-	void UpdateGameTime()
-	{
-		if (isStart == true) {
-			gameTime -= Time.deltaTime;
-			TimeImage.fillAmount = gameTime / stageRemainTime;
-		}
-
-		if (gameTime < 0) {
-			StageClear ();
-
-			gameTime = 999;
-		}
-	}
-    */
+    private void UpdateWaveGage()
+    {
+        waveGage.fillAmount = gameTime / totalTime;
+    }
     
 	
 

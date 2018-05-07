@@ -21,6 +21,10 @@ public class GameButton : MonoBehaviour {
 
     public void SummonButton()
     {
-        CUnitManager.Instance.CreateRandomUnit();
+        if (100 <= CGameManager.Instance.mana)
+        {
+            CGameManager.Instance.mana -= 100;
+            CUnitManager.Instance.CreateRandomUnit();
+        }
     }
 }

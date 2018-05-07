@@ -60,7 +60,7 @@ public class CUnitManager : MonoBehaviour {
         int x = index % 5;
         int y = index / 5;
 
-        return new Vector2(4.4f*x - 4.4f*y, 9.2f - 2.3f*x - 2.3f*y);
+        return new Vector2(4.4f*x - 4.4f*y, 8.74f - 2.185f*x - 2.185f*y);
     }
 
     public void CreateRandomUnit()

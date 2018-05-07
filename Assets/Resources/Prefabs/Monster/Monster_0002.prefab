@@ -232,9 +232,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4497052905819686}
+  - component: {fileID: 114197579876235766}
+  - component: {fileID: 114515357963627796}
   - component: {fileID: 95634017627738138}
-  - component: {fileID: 114186427454614144}
-  - component: {fileID: 114651218055353718}
   m_Layer: 0
   m_Name: Monster_0002
   m_TagString: Untagged
@@ -340,7 +340,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1897045626598550}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 12, z: -1}
+  m_LocalPosition: {x: 0, y: 13.11, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4247354381626712}
@@ -538,7 +538,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1520495650740678}
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 43315098630165092, guid: 30b3479ce6ea0434c92b88afc978851c, type: 2}
 --- !u!95 &95634017627738138
 Animator:
   serializedVersion: 3
@@ -661,7 +661,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 4744968580903614}
   - {fileID: 4636848725674346}
---- !u!114 &114186427454614144
+--- !u!114 &114197579876235766
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -669,12 +669,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1897045626598550}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76136a70c4ebec44f85c2e1c225a32b4, type: 3}
+  m_Script: {fileID: 11500000, guid: 2174ae19e0f846f4aa6803c6991af754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nowDirecton: 0
-  nowAnimState: 0
-  speed: 10
+  Loop: 1
+  waypoint:
+  - {x: 0, y: 13.11}
+  - {x: -26.4, y: 0}
+  - {x: 0, y: -13.11}
+  - {x: 26.4, y: 0}
 --- !u!114 &114232677004140112
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -728,6 +731,25 @@ MonoBehaviour:
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4924617937935166}
   m_AttachedIK: {fileID: 0}
+--- !u!114 &114515357963627796
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1897045626598550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f80d4040511dbcd4db503a4ae4f2b3fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myStatus:
+    Name: Monster_0002
+    HP: 50
+    AP: 0
+    DP: 0
+    Speed: 5
+    AttackSpeed: 0
+  isDead: 0
 --- !u!114 &114578851332870608
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -744,23 +766,6 @@ MonoBehaviour:
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4636848725674346}
   m_AttachedIK: {fileID: 0}
---- !u!114 &114651218055353718
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1897045626598550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2174ae19e0f846f4aa6803c6991af754, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Loop: 1
-  waypoint:
-  - {x: 0, y: 12}
-  - {x: -24, y: 0}
-  - {x: 0, y: -12}
-  - {x: 24, y: 0}
 --- !u!114 &114686611927244130
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -858,7 +863,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 43175161551950880, guid: ea24adaa9fece1940a6e6f27a10af887, type: 2}
   m_Bones:
   - {fileID: 4709753203861806}
   - {fileID: 4670815956120078}
@@ -907,7 +912,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 43008021828683622, guid: ca8972fdf6d0fb942932534ab0517218, type: 2}
   m_Bones:
   - {fileID: 4744968580903614}
   - {fileID: 4636848725674346}
@@ -956,7 +961,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 43179194167310970, guid: 00c4a4ae89d96844c9bc71bc319b4552, type: 2}
   m_Bones:
   - {fileID: 4554542789812140}
   - {fileID: 4696134750621878}
@@ -1005,7 +1010,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 43138661317486160, guid: 74f54bd9d3c2e7141b5177d18221b645, type: 2}
   m_Bones:
   - {fileID: 4885366245605072}
   - {fileID: 4924617937935166}

@@ -39,7 +39,7 @@ public class CCharacterManager : MonoBehaviour {
         monsterDic = new Dictionary<string, GameObject>();
         activeMonsterList = new List<GameObject>();
         activeUnitList = new List<GameObject>();
-
+        
         LoadDataFromFiles("Prefabs/Unit", unitDic);
         LoadDataFromFiles("Prefabs/Monster", monsterDic);
     }
@@ -66,5 +66,11 @@ public class CCharacterManager : MonoBehaviour {
     public void DestroyObjectFromList(GameObject obj)
     {
         activeMonsterList.Remove(obj);
+    }
+
+    public void CombinationUnit()
+    {
+//        for()
+//        activeUnitList
     }
 }
