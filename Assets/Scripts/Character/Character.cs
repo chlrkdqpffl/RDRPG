@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Character : MonoBehaviour {
 
+    /*
     public enum AnimState
     {
         Idle,
@@ -28,11 +29,13 @@ public class Character : MonoBehaviour {
         Right
     }
 
-    public CharacterInfo myStatus;
     public Direction nowDirecton;
     public AnimState nowAnimState;
+    */
 
-    public Animator myAnimator;
+    public CharacterInfo myStatus;
+
+    protected Animator myAnimator;
 
     protected void Awake()
     {

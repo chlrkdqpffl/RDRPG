@@ -1,11 +1,34 @@
 {	
 	"Stage":			1,
-	"Wave":				1,
+	"Wave":				5,
 	
 	"WaveData":[
 	{
-		"AppearCount":	1,
+		"AppearCount":	10,
 		"RepeatTime":	2,
 		"MonsterType":	"Monster_0001"
-	}]
+	},
+	{
+		"AppearCount":	15,
+		"RepeatTime":	1.5,
+		"MonsterType":	"Monster_0001"
+	},
+	{
+		"AppearCount":	10,
+		"RepeatTime":	2,
+		"MonsterType":	"Monster_0002"
+	},
+	{
+		"AppearCount":	15,
+		"RepeatTime":	1.5,
+		"MonsterType":	"Monster_0002"
+	},
+
+	{
+		"AppearCount":	20,
+		"RepeatTime":	1,
+		"MonsterType":	"Monster_0002"
+	}
+
+	]
 }

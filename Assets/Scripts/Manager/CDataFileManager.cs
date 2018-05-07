@@ -55,8 +55,6 @@ public class CDataFileManager : MonoBehaviour {
         {
             CharacterInfo monster = JsonUtility.FromJson<CharacterInfo>(textDatas[i].text);
 
-
-
             monsterDic.Add(monster.Name, monster);
         }
     }

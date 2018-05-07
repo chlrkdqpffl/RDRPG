@@ -31,29 +31,34 @@ public class CWaveManager : MonoBehaviour {
     {
         StartWave(1);
     }
-
+    
     public void StartWave(int wave)
     {
-        StageInfo stage = CDataFileManager.Instance.stageDic[wave];
-        nowWave = 1;
-
-      //  for(int i = 0; i < stage.WaveData.Length; ++i)
-        StartCoroutine(CreateRepeat(stage.WaveData[0]));
+        nowWave = wave;
+        
+        StartCoroutine(CreateRepeat(CDataFileManager.Instance.stageDic[wave]));
     }
 
     
-    private IEnumerator CreateRepeat(WaveInfo waveinfo)
+    private IEnumerator CreateRepeat(StageInfo stage)
     {
         int createCount = 0;
 
         yield return new WaitForSeconds(startWatingTime);
 
-        while (createCount < waveinfo.AppearCount)
+        while (createCount < stage.WaveData[nowWave - 1].AppearCount)
         {
             createCount++;
-            MonsterPool.Instance.WakeUpObject(waveinfo.MonsterType);
+            MonsterPool.Instance.WakeUpObject(stage.WaveData[nowWave - 1].MonsterType);
 
-            yield return new WaitForSeconds(waveinfo.RepeatTime);
+            yield return new WaitForSeconds(stage.WaveData[nowWave - 1].RepeatTime);
+        }
+
+        nowWave++;
+        if (nowWave < stage.Wave)
+        {
+            StartCoroutine(CreateRepeat(stage));
+
         }
     }
     

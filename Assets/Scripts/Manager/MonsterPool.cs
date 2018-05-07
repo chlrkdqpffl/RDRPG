@@ -29,26 +29,36 @@ public class MonsterPool : MonoBehaviour {
     private void Awake()
     {
         monsterPool = new Dictionary<string, List<GameObject>>();
-
-
-        LoadDataFromFile_Monster("Monster_0001");
     }
 
-    private void LoadDataFromFile_Monster(string path)
+    private void Start()
     {
-        GameObject prefab = Resources.Load("Prefabs/Monster/" + path) as GameObject;
+        CreatePoolAll();
+    }
 
+    private void CreatePoolAll()
+    {
+        GameObject[] objects = Resources.LoadAll<GameObject>("Prefabs/Monster");
 
-        List<GameObject> objectList = new List<GameObject>();
-        for (int i = 0; i < poolCapacity; ++i)
+        for (int i = 0; i < objects.Length; ++i)
         {
-            GameObject obj = Instantiate(prefab, transform);
-            obj.SetActive(false);
+            List<GameObject> objectList = new List<GameObject>();
 
-            objectList.Add(obj);
+            for (int j = 0; j < poolCapacity; ++j)
+            {
+                GameObject obj = Instantiate(objects[i], transform);
+                obj.SetActive(false);
+
+                objectList.Add(obj);
+            }
+
+            monsterPool.Add(objectList[0].GetComponent<Character>().myStatus.Name, objectList);
         }
+    }
 
-        monsterPool.Add(path, objectList);
+    public void PushObjectPool(string name, GameObject obj)
+    {
+        monsterPool[name].Add(obj);
     }
 
     public void WakeUpObject(string name)

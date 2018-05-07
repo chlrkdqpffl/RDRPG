@@ -15,26 +15,32 @@ public class Unit : Character
 	
 	void Update ()
     {
+        if(Input.GetKeyDown(KeyCode.A))
+            myAnimator.Play("Battle_Figher_Attack");
+        else if (Input.GetKeyDown(KeyCode.B))
+            myAnimator.Play("Battle_Figher_ready");
+
+
         CheckInEnemy();
     }
 
     private void CheckInEnemy()
     {
         for (int i = 0; i < CCharacterManager.Instance.activeMonsterList.Count; ++i) {
+//            float dist = Vector2.Distance(transform.position, CCharacterManager.Instance.activeMonsterList[i].transform.position);
+//            Debug.Log(dist);
+
             if (Vector2.Distance(transform.position, CCharacterManager.Instance.activeMonsterList[i].transform.position) <= AttackRange)
             {
-                // 공격 대기중
-                if(isAttackWating)
+                myAnimator.SetBool("isRange", true);
+                if (isAttackWating == false)
                 {
-                    myAnimator.Play("Battle_Figher_ready");
-                }
-                else
-                {
-                    myAnimator.Play("Battle_Figher_Attack");
                     StartCoroutine(AttackEnemy(i));
-                    //여기서 부터 하자 - 공격 애니메이션ㅇ 자연스럽게 연결하자
+                    return;
                 }
             }
+            else
+                myAnimator.SetBool("isRange", false);
         }
     }
 
@@ -42,13 +48,11 @@ public class Unit : Character
     private IEnumerator AttackEnemy(int index)
     {
         isAttackWating = true;
+        myAnimator.Play("Battle_Figher_Attack");
 
-//        myAnimator.Play("");
+        GameObject monster = CCharacterManager.Instance.activeMonsterList[index];
+        monster.GetComponent<Monster>().Damage(myStatus.AP);
 
-
-
-        Debug.Log(index);
-        // CCharacterManager.Instance.activeMonsterList[index]
 
         yield return new WaitForSeconds(myStatus.AttackSpeed);
 

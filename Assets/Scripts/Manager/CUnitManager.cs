@@ -39,6 +39,12 @@ public class CUnitManager : MonoBehaviour {
         LoadUnit();   
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+            CreateRandomUnit();
+    }
+
     private void LoadUnit()
     {
         object[] objects = Resources.LoadAll("Prefabs/Unit");
@@ -54,7 +60,7 @@ public class CUnitManager : MonoBehaviour {
         int x = index % 5;
         int y = index / 5;
 
-        return new Vector2(-4*y + 4*x, 8 - 2*x - 2*y );
+        return new Vector2(4.4f*x - 4.4f*y, 9.2f - 2.3f*x - 2.3f*y);
     }
 
     public void CreateRandomUnit()
