@@ -1,5 +1,5 @@
 
-character_2.png
+character_0002.png
 size: 1024,1024
 format: RGBA8888
 filter: Linear,Linear
@@ -110,7 +110,7 @@ shadow
   offset: 0, 0
   index: -1
 
-character_22.png
+character_00022.png
 size: 512,256
 format: RGBA8888
 filter: Linear,Linear
